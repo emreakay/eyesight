@@ -11,3 +11,5 @@
 ### installed
 laravel debugbar
 larastan
+livewire
+tailwindcss
