@@ -5,3 +5,9 @@
 
 
 ----
+
+
+
+### installed
+laravel debugbar
+larastan
