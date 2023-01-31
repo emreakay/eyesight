@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('http_eyesight', function (Blueprint $table) {
+        Schema::create('http_eyesights', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('url');
             $table->boolean('ssl');
             $table->boolean('domain_expire');

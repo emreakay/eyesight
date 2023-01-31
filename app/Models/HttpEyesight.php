@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class HttpEyesight extends Model
 {
     use HasFactory;
+
+    protected static ?string $recordTitleAttribute = 'name';
+
+    protected $guarded = [];
 }
