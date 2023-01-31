@@ -22,6 +22,10 @@
   - interval per channel
   - mail
 - status page
+- Dispachers
+- workers
+- dashboard
+- https methods, get post vs.
 ----
 
 

@@ -13,19 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('http_eyesights', function (Blueprint $table) {
+        Schema::create('http_eyesight_records', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique()->index();
-            $table->string('url');
-            $table->boolean('ssl');
-            $table->boolean('domain_expire');
-            $table->unsignedInteger('timeout')->default(10);
+            $table->unsignedBigInteger('http_eyesights_id')->index();
+            $table->string('type')->index();
+            $table->string('name');
+            $table->dateTime('ssl_expire')->nullable();
+            $table->dateTime('domain_expire')->nullable();
+            $table->bigInteger('response_time_in_ms')->nullable();
             $table->unsignedInteger('lh_performance')->nullable();
             $table->unsignedInteger('lh_accessibility')->nullable();
             $table->unsignedInteger('lh_best_practices')->nullable();
             $table->unsignedInteger('lh_seo')->nullable();
             $table->unsignedInteger('lh_pwa')->nullable();
-            $table->unsignedInteger('interval_in_sec');
+            $table->json('payload');
+            $table->json('alert')->nullable();
             $table->timestamps();
         });
     }
@@ -37,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('http_eyesight');
+        Schema::dropIfExists('eyesight_records');
     }
 };
